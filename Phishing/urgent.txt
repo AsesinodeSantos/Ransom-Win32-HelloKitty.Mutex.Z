@@ -1,0 +1,19 @@
+Hello Sam K,
+
+We detected a login attempt to your company account from an unrecognized device. While this activity may be legitimate, we recommend verifying your account to ensure continued access.
+
+Please review your account activity and confirm your credentials:
+
+[VERIFY ACCOUNT BUTTON]
+
+No action will affect your account immediately, but completing verification now prevents future access interruptions.
+
+For questions, contact IT Security at it-security@company.com.
+
+Best regards,
+IT Security Team
+[Company Name]
+
+---
+
+*Simulation: No real credentials are requested.*
