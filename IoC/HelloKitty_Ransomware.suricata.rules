@@ -1,0 +1,3 @@
+
+alert tcp any any -> any 443 (msg:"HelloKitty Ransomware C2 traffic"; flow:established,to_server; content:"POST"; http_method; content:"/decrypt"; http_uri; content:"User-Agent: Mozilla"; http_header; classtype:trojan-activity; sid:500001; rev:2;)
+alert tcp any any -> any 443 (msg:"HelloKitty Ransomware Tor C2"; flow:established,to_server; content:"GET"; http_method; content:"/status"; http_uri; classtype:trojan-activity; sid:500002; rev:1;)

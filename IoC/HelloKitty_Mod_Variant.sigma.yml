@@ -1,0 +1,30 @@
+
+title: HelloKitty Modded Variant Detection
+id: 9a14b65d-eb12-4f7c-8a3b-987654321def
+status: experimental
+description: Detects behavior of modded HelloKitty ransomware including shadow copy deletion, file encryption, and network C2 communication
+author: Defensive Research
+logsource:
+    product: windows
+    service: sysmon
+detection:
+    selection:
+        EventID: 11
+        TargetFilename|endswith: ".crypt"
+    selection2:
+        EventID: 10
+        Image|endswith: "vssadmin.exe"
+    selection3:
+        EventID: 1
+        CommandLine|contains: "Salsa20" or "RSA-2048"
+    selection4:
+        EventID: 3
+        Image|endswith: "powershell.exe"
+        CommandLine|contains: "Invoke-Expression"
+    condition: selection or selection2 or selection3 or selection4
+fields:
+    - TargetFilename
+    - Image
+    - ParentImage
+    - CommandLine
+level: high

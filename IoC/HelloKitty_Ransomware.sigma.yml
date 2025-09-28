@@ -1,0 +1,26 @@
+
+title: HelloKitty Ransomware Detection - Expanded
+id: 8f14e45f-ea9d-4d8c-9a2c-123456789abc
+status: experimental
+description: Detects HelloKitty ransomware activity on Windows endpoints including file encryption, shadow copy deletion, and process injection
+author: Synthetic Threat Detection
+logsource:
+    product: windows
+    service: sysmon
+detection:
+    selection:
+        EventID: 11  # File creation events
+        TargetFilename|endswith: ".locked"
+    selection2:
+        EventID: 10  # Process access events
+        Image|endswith: "vssadmin.exe"
+    selection3:
+        EventID: 1   # Process creation events
+        CommandLine|contains: "Salsa20" or "RSA-2048"
+    condition: selection or selection2 or selection3
+fields:
+    - TargetFilename
+    - Image
+    - ParentImage
+    - CommandLine
+level: high
