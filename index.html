@@ -1,0 +1,105 @@
+<!--
+Defensive, sanitized demo of a "leak page" for training / SOC tabletop exercises.
+DO NOT use this for malicious purposes.
+
+Features:
+- Static HTML/CSS only
+- Placeholder content, no real extortion text
+- Buttons and links disabled
+- Guidance comments for defenders
+
+Run locally for testing: python -m http.server 8000 (serves current directory)
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Incident Simulation — Leaked Data (Demo)</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#ef4444;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,var(--bg),#071027);color:#e6eef8}
+    .wrap{max-width:920px;margin:48px auto;padding:24px}
+    .card{background:linear-gradient(180deg,var(--card),rgba(11,18,32,0.9));border-radius:12px;padding:24px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:8px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    h1{margin:0;font-size:20px}
+    p.lead{color:var(--muted);margin:8px 0 20px}
+    .meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    .meta .pill{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
+    .banner{border-radius:10px;padding:18px;background:linear-gradient(90deg,rgba(239,68,68,0.08),rgba(239,68,68,0.02));border:1px solid rgba(239,68,68,0.06);margin-bottom:16px}
+    .table{width:100%;border-collapse:collapse}
+    .table th{text-align:left;padding:10px 8px;color:var(--muted);font-size:13px}
+    .table td{padding:12px 8px;border-top:1px solid rgba(255,255,255,0.02)}
+    .muted{color:var(--muted);font-size:13px}
+    .cta{display:flex;gap:12px;margin-top:16px}
+    .btn{padding:10px 14px;border-radius:8px;background:var(--accent);color:white;border:none;cursor:not-allowed;opacity:0.9}
+    .btn.secondary{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03);cursor:default}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .notice{background:#06202b;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="logo">DM</div>
+        <div>
+          <h1>Incident Simulation — Leaked Data (Demo)</h1>
+          <p class="lead">Sanitized mockup for training. No real data. All actions disabled by design.</p>
+          <div class="meta">
+            <div class="pill">Case ID: DEMO-2025-001</div>
+            <div class="pill">Reported: 2025-09-28</div>
+            <div class="pill">Status: Simulation</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="banner">
+        <strong>Notice:</strong>
+        <span class="muted">This page is a defensive simulation to help SOCs practice detection and communications. It intentionally contains no operational instructions.</span>
+      </div>
+
+      <section>
+        <h2 style="font-size:16px;margin:0 0 8px">Public Page Preview</h2>
+        <p class="muted">This section demonstrates how a leak page might appear visually. All text is fictional and safe.</p>
+
+        <table class="table" aria-hidden="true">
+          <thead>
+            <tr><th>Document</th><th>Preview</th><th>Tag</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>HR Records (redacted)</td><td class="muted">10 rows shown. Names replaced.</td><td>confidential</td></tr>
+            <tr><td>Financial Report (redacted)</td><td class="muted">summary snapshot only</td><td>finance</td></tr>
+            <tr><td>Database Dump (redacted)</td><td class="muted">schema only, no credentials</td><td>db</td></tr>
+          </tbody>
+        </table>
+
+        <div class="cta">
+          <button class="btn" disabled>Contact Simulated Operator</button>
+          <button class="btn secondary" disabled>Download (disabled)</button>
+        </div>
+
+        <div style="margin-top:18px" class="notice">
+          <strong>For SOC trainers:</strong> Use this page to exercise playbooks for detection, comms, and legal notification. Replace placeholders with sanitized screenshots only. Do not publish anywhere public.
+        </div>
+      </section>
+
+      <section style="margin-top:20px">
+        <h2 style="font-size:16px;margin:0 0 8px">Operational Guidance (defensive)</h2>
+        <ol class="muted">
+          <li>Use offline copies of this file for tabletop exercises.</li>
+          <li>Integrate with SIEM alerts: simulate inbound links and monitor clicks from test accounts only.</li>
+          <li>Validate backup restores before declaring full recovery in exercises.</li>
+        </ol>
+      </section>
+
+      <footer>
+        <div class="muted">Template created for defensive training. Replace text and screenshots with sanitized materials only.</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
+
