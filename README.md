@@ -1,4 +1,4 @@
-# IT-Admin IOC Repository
+# HelloKitty Ransomware IoCs:
 
 This repository contains Indicators of Compromise (IoCs) and security resources for threat detection and analysis. It includes hash lists, summaries of notable malware, and references for incident response.
 
@@ -63,4 +63,3 @@ _Note: MD5 is a weak hash and may be susceptible to collisions, but is still oft
 - [HelloKitty IOC Analysis (Kaspersky)](https://securelist.com/the-hellokitty-ransomware-family/104491/)
 - [Fileless Malware Explained (CrowdStrike)](https://www.crowdstrike.com/cybersecurity-101/malware/fileless-malware/)
 - [MD5 Hashes as IoC (SANS)](https://www.sans.org/blog/using-md5-hashes-for-detection/)
-- [
