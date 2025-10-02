@@ -25,6 +25,10 @@ _Note: MD5 is a weak hash and may be susceptible to collisions, but is still oft
 
 ---
 
+<img width="1536" height="1024" alt="41264A1A-3D57-4343-B7D4-33CEC99C7B3C" src="https://github.com/user-attachments/assets/3e608c0b-da0a-4b69-a791-bcefc9c82b24" />
+
+
+
 ## HelloKitty Ransomware
 
 **HelloKitty** is a ransomware strain first observed in 2020, known for targeting organizations worldwide. It encrypts files on compromised systems and demands payment for decryption keys. Notable aspects include:
